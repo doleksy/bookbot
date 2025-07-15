@@ -10,3 +10,16 @@ def get_num_chars(book_text):
         else:
             char_dict[lower_ch] = 1
     return char_dict
+
+def sort_on(items):
+    return items["num"]
+
+def get_sorted_dict(chars_dict):
+    list_of_dicts = []
+    for k, v in chars_dict.items():
+        list_of_dicts.append({"char": k, "num": v})
+        
+    list_of_dicts.sort(key=sort_on, reverse=True)
+
+    return list_of_dicts
+    
